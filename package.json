@@ -1,0 +1,29 @@
+{
+  "name": "wappalyzer-puppeteer",
+  "version": "0.0.1",
+  "description": "Wappalyzer cli using puppeteer as browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realhidden/wappalyzer-puppeteer.git"
+  },
+  "keywords": [
+    "wappalyzer",
+    "puppeteer"
+  ],
+  "author": {
+    "name": "Zsombor Paroczi",
+    "email": "zsombor.paroczi@gmail.com"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/realhidden/wappalyzer-puppeteer/issues"
+  },
+  "homepage": "https://github.com/realhidden/wappalyzer-puppeteer#readme",
+  "peerDependencies": {
+    "wappalyzer": "5.x"
+  }
+}

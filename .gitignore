@@ -1,0 +1,16 @@
+/node_modules
+/npm-debug.log
+
+package-lock.json
+
+!.gitkeep
+
+# Junk files
+Thumbs.db
+Desktop.ini
+*.DS_Store
+._*
+tags
+tags.*
+.idea
+/nbproject/private/
