@@ -23,7 +23,14 @@
     "url": "https://github.com/realhidden/wappalyzer-puppeteer/issues"
   },
   "homepage": "https://github.com/realhidden/wappalyzer-puppeteer#readme",
+  "bin": {
+    "wappalyzer-puppeteer": "./cli.js"
+  },
   "peerDependencies": {
-    "wappalyzer": "5.x"
+    "wappalyzer": "5.x",
+    "puppeteer-cluster": "^0.18.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }
