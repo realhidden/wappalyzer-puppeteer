@@ -1,6 +1,6 @@
 {
     "name": "wappalyzer-puppeteer",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Wappalyzer cli using puppeteer as browser",
     "main": "index.js",
     "scripts": {
@@ -26,11 +26,12 @@
     "bin": {
         "wappalyzer-puppeteer": "./cli.js"
     },
-    "peerDependencies": {
-        "wappalyzer": "5.x",
-        "puppeteer-cluster": "^0.18.0"
-    },
     "devDependencies": {
         "prettier": "^1.19.1"
+    },
+    "dependencies": {
+        "puppeteer": "2.x",
+        "puppeteer-cluster": "^0.18.0",
+        "wappalyzer": "5.x"
     }
 }

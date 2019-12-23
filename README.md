@@ -16,17 +16,11 @@ $ npm i -g wappalyzer-puppeteer      # Globally
 $ npm i wappalyzer-puppeteer --save  # As a dependency
 ```
 
-There are three main peer dependencies needed by this project:
+There are three main dependencies for this project:
 
--   [Wappalyzer](https://www.npmjs.com/package/wappalyzer)
+-   [Wappalyzer](https://www.npmjs.com/package/wappalyzer) - for apps.json only
 -   [puppeteer-cluster](https://www.npmjs.com/package/puppeteer-cluster)
 -   [puppeteer](https://www.npmjs.com/package/puppeteer)
-
-If you are doing a global install, please install them as well
-
-```shell
-$ npm i -g wappalyzer@5.x puppeteer-cluster@0.18 puppeteer@2.x
-```
 
 ## Run from the command line
 
