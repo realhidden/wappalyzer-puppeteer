@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 // Modified version of https://github.com/AliasIO/wappalyzer/blob/master/src/drivers/npm/cli.js
-const Wappalyzer = require('./driver');
-const Browser = require('wappalyzer/browsers/zombie');
+const { AppAnalytics, PuppeteerCluster } = require('./index');
 
 const args = process.argv.slice(2);
 
@@ -30,15 +29,17 @@ do {
     }
 } while (arg);
 
-const wappalyzer = new Wappalyzer(Browser, url, options);
+const appAnalytics = new AppAnalytics();
+const wappalyzer = new PuppeteerCluster(appAnalytics, options);
 
-wappalyzer
-    .analyze()
+appAnalytics
+    .loadAppsjson()
+    .then(() => wappalyzer.startCluster())
+    .then(() => wappalyzer.analyze(url))
     .then(json => {
         process.stdout.write(`${JSON.stringify(json)}\n`);
-
-        process.exit(0);
     })
+    .then(() => wappalyzer.closeCluster())
     .catch(error => {
         process.stderr.write(`${error}\n`);
 

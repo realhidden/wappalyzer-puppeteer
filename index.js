@@ -1,17 +1,32 @@
-// Modified version of https://github.com/AliasIO/wappalyzer/blob/master/src/drivers/npm/index.js
-const Driver = require('./driver');
-const ZombieBrowser = require('wappalyzer/browsers/zombie');
+const { Cluster } = require('puppeteer-cluster');
+const AppAnalytics = require('./appanalytics');
+const PuppeteerCluster = require('./puppeteercluster');
 
-class Wappalyzer {
-    constructor(pageUrl, options) {
-        this.browser = ZombieBrowser;
+/*
+(async () => {
+    const appAnalytics = new AppAnalytics();
+    await appAnalytics.loadAppsjson();
 
-        return new Driver(this.browser, pageUrl, options);
-    }
-}
+    const cluster = new PuppeteerCluster(appAnalytics,{
+        waitDuration:0,
+        puppeteerClusterOptions:{
+            concurrency: Cluster.CONCURRENCY_CONTEXT,
+            maxConcurrency: 2,
+            puppeteerOptions: {
+                headless: true,
+                ignoreHTTPSErrors: true
+            }
+        }
+    });
 
-Wappalyzer.browsers = {
-    zombie: ZombieBrowser
+    await cluster.startCluster();
+    const result = await cluster.analyze('https://thisisdone.com');
+    console.log(result);
+    await cluster.closeCluster();
+})();*/
+
+module.exports = {
+    AppAnalytics,
+    PuppeteerCluster,
+    Cluster
 };
-
-module.exports = Wappalyzer;
